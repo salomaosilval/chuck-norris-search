@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Roboto_Slab, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
-import ThemeToggleButton from "./components/theme-toggle-button";
 
 const robotoSlab = Roboto_Slab({
   subsets: ["latin"],
@@ -32,10 +31,7 @@ export default function RootLayout({
       <body
         className={`${robotoSlab.variable} ${robotoMono.variable} font-sans antialiased`}
       >
-        <Providers>
-          {children}
-          <ThemeToggleButton />
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
